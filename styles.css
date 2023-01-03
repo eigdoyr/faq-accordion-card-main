@@ -8,7 +8,8 @@
   --very-dark-grayish-blue: hsl(237, 12%, 33%);
   --dark-grayish-blue: hsl(240, 6%, 50%);
 
-  --ight-grayish-blue: hsl(240, 5%, 91%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --white: hsl(0, 0%, 100%);
 }
 
 *,
@@ -70,13 +71,58 @@ body {
   min-height: 100vh;
   font-family: "Kumbh Sans", sans-serif;
   background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  padding: 8rem 0 8rem 0;
 }
 
-details {
+.card__container {
+  background-color: var(--white);
   padding: 1rem;
+  border-radius: 15px;
+  background-image: url(./images/bg-pattern-mobile.svg);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  width: 20.375rem;
+  padding: 8rem 1rem 3rem 1rem;
+  position: relative;
+  box-shadow: 0px 15px 20px -10px hsl(0, 0%, 25%);
 }
 
-summary {
+.card__img-main {
+  width: 75%;
+  position: absolute;
+  top: -110px;
+  left: 45px;
+}
+
+.card__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+.faq__details {
+  padding: 1.15rem;
+}
+
+.faq__details[open] .faq__question:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.faq__details[open] .faq__question h2 {
+  font-weight: 700;
+}
+
+.faq__question {
   list-style-image: url(./images/icon-arrow-down.svg);
   list-style-position: initial;
   display: flex;
@@ -85,40 +131,33 @@ summary {
   max-width: 350px;
 }
 
-details > summary {
-  list-style: none;
-  width: 100%;
-}
-summary::-webkit-details-marker {
+.faq__question::-webkit-details-marker {
   display: none;
 }
 
-summary::after {
+.faq__question::after {
   content: url(./images/icon-arrow-up.svg);
-}
-details[open] summary:after {
-  content: url(./images/icon-arrow-down.svg);
+  margin-left: 1rem;
 }
 
-h1 {
-  text-align: center;
+.faq__question h2 {
+  font-size: 0.8rem;
+  font-weight: 100;
 }
 
-h2 {
-  font-size: 0.85rem;
+.faq__question:hover {
+  color: var(--soft-red);
+  cursor: pointer;
 }
 
-.card__container {
-  background-color: var(--ight-grayish-blue);
-  padding: 1rem;
-  border-radius: 15px;
-  min-height: auto;
+.faq__answer {
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 0;
+  color: var(--dark-grayish-blue);
 }
 
-.img__container-main {
-  margin-top: -8.5rem;
-}
-
-.img__container-bg {
-  margin-top: -5rem;
+hr {
+  border: 1px solid var(--light-grayish-blue);
+  margin: 0 auto;
+  width: 16.375rem;
 }
